@@ -1,0 +1,221 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <title>3BSalam</title>
+  <style>
+    body {
+        background: #AAD7D9;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .container {
+        background: #fff;
+        border-radius: 3px;
+        margin: 50px auto;
+        max-width: 800px;
+        padding: 20px;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+    }
+
+    button {
+  display: inline-block;
+  padding: 15px 30px;
+  margin: 15px;
+  border: none;
+  border-radius: 6px;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #4CAF50;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #5EBE5E;
+}
+
+button:active {
+  background-color: #45A049;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+h3{
+  color: #860A35
+}
+    .container h1 {
+        color: #333;
+        font-size: 48px;
+        margin: 0 0 20px 0;
+    }
+
+    #todo-form {
+        margin: 20px 0;
+    }
+
+    #new-todo {
+        background: #fff;
+        border: 1px solid #999;
+        border-radius: 3px;
+        font-size: 24px;
+        margin-right: 5px;
+        padding: 10px;
+        width: calc(100% - 60px);
+    }
+
+    #new-todo:focus {
+        outline: 0;
+    }
+
+    #todo-form button {
+        background: #333;
+        border: none;
+        border-radius: 3px;
+        color: #fff;
+        font-size: 24px;
+        padding: 10px;
+    }
+
+    #todo-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    #todo-list li {
+        background: #fff;
+        border-bottom: 1px solid #ccc;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    #todo-list li:last-child {
+        border-bottom: none;
+    }
+
+    #todo-list label {
+        flex: 1;
+        font-size: 24px;
+        margin-left: 20px;
+    }
+
+    #todo-list li.completed label {
+        text-decoration: line-through;
+        color: #ccc;
+    }
+
+    #todo-list button {
+        background: none;
+        border: none;
+        color: #ccc;
+        font-size: 30px;
+        margin-left: 20px;
+        display: none;
+    }
+
+    #todo-list li.editing button {
+        display: block;
+    }
+
+    #todo-list button:hover {
+        color: #999;
+    }
+
+    #todo-list input[type="checkbox"] {
+        margin-right: 10px;
+    }
+    .completed {
+      text-decoration: line-through;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Our way to 100% QA Score</h1>
+  <ul id="itemList">
+    <li class="">
+      <input type="checkbox" onchange="toggleCompleted(this)">
+      <label><strong>Opening the call and verification</strong></label>
+    </li>
+    <hr>
+    <li class="">
+      <input type="checkbox" onchange="toggleCompleted(this)">
+      <label><strong>Best call Back Number</strong></label>
+    </li>
+    <hr>
+    <li class="">
+      <input type="checkbox" onchange="toggleCompleted(this)">
+      <label> <strong>Contact preferences</strong></label>
+      <h3>Would you like me to update anything in your contact preferences such as phone number , cell phone or email address
+      to receive important notifications and text messages. that will keep you update with any kind of new optimum updates or even outages in your area or every thing is up to date</h3>
+    </li>
+    <hr>
+    <li class="">
+      <input type="checkbox" onchange="toggleCompleted(this)">
+      <label><strong>Hearing the query.Show Empathy and Rapport.
+        Repeat Customer Concern</strong></label>
+    </li>
+    <hr>
+    <li class="">
+      <input type="checkbox" onchange="toggleCompleted(this)">
+      <label><strong>STAT</strong></label>
+    </li>
+    <hr>
+    <li class="">
+      <input type="checkbox" onchange="toggleCompleted(this)">
+      <label><strong>Tool usage Light speed or VAT</strong></label>
+    </li>
+    <hr>
+    <li class="">
+      <input type="checkbox" onchange="toggleCompleted(this)">
+      <label><strong>Self-Help optimum.net and optimum app and youtube channel</strong></label>
+    </li>
+    <hr>
+    <li class="">
+      <input type="checkbox" onchange="toggleCompleted(this)">
+      <label><strong>Acknowledge the customer's Tenure / Loyalty At leatst twice in the call</strong></label>
+<hr>
+    </li><li class="">
+      <input type="checkbox" onchange="toggleCompleted(this)">
+      <label><strong>Mobile Sales</strong></label>
+      <h3>As I can see  that you're eligible to a good offer for our mobile service since you're a loyal customer to optimum. you will get a discount on your account
+      up to 15$ per month which means you can save up to 180$ per year. also you will get a good deal on your mobile plan. would you like me after this call connect you with the mobile sales agent?</h3>
+    </li>
+    <hr>
+    <li class="">
+      <input type="checkbox" onchange="toggleCompleted(this)">
+      <label><strong>2 Further Assistance</strong></label>
+      <h3>Is there's any thing else that I can assist you with?</h3>
+      <h3>have I managed to answer all of your question and concerns for today?</h3>
+    </li>
+    <hr>
+    <li class="">
+      <input type="checkbox" onchange="toggleCompleted(this)">
+      <label><strong>Recap</strong></label>
+    </li>
+    <hr>
+    <li class="">
+      <input type="checkbox" onchange="toggleCompleted(this)">
+      <label><strong>Closure Script</strong></label>
+    </li>
+  <hr>
+  </ul>
+  <button id="newCallButton" onclick="clearCheckmarks()">New Call</button>
+
+  <script>
+    function toggleCompleted(checkbox) {
+      var listItem = checkbox.parentNode;
+      listItem.classList.toggle('completed');
+    }
+
+    function clearCheckmarks() {
+      var checkboxes = document.querySelectorAll('#itemList input[type="checkbox"]');
+      checkboxes.forEach(function (checkbox) {
+        checkbox.checked = false;
+        var listItem = checkbox.parentNode;
+        listItem.classList.remove('completed');
+      });
+    }
+  </script>
+
+
+</body></html>
